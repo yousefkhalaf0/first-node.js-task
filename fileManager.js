@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline-sync");
 
-// Function to read a file
 function readFile() {
     const fileName = readline.question("Enter the file name to read: ");
     const filePath = path.join(__dirname, fileName);
@@ -15,12 +14,10 @@ function readFile() {
     }
 }
 
-// Function to write a file
 function writeFile() {
     const fileName = readline.question("Enter the file name to write: ");
     const filePath = path.join(__dirname, fileName);
 
-    // If file exists, remove and create a new one
     if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
         console.log("\n✅ Old file removed. Creating a new file...");
@@ -30,11 +27,9 @@ function writeFile() {
     fs.writeFileSync(filePath, content, "utf8");
     console.log("\n💾 File saved successfully!");
 
-    // Option to print content
     readFile();
 }
 
-// Interactive Menu
 function main() {
     while (true) {
         console.log("\n📜 MENU");
@@ -57,5 +52,4 @@ function main() {
     }
 }
 
-// Start the app
 module.exports = main;
