@@ -1,88 +1,138 @@
-# 📂 Node.js File Manager
+# File Manager CLI
 
-## 🚀 Overview
-This is a **command-line file manager** built using Node.js. It allows users to:
-- 📖 Read a file
-- 📝 Write a file
-- 🚪 Exit the program
-
-The project demonstrates **synchronous and asynchronous file operations** using Node.js's `fs` module, along with user input handling via `readline-sync`.
+A simple command-line application built with Node.js to read and write files in the current directory.
 
 ---
 
-## 📜 Features
-✅ **Read files**: Displays the content of an existing file.
-✅ **Write files**: Allows users to create or overwrite files.
-✅ **Handles missing files**: Prevents crashes and provides clear error messages.
-✅ **Interactive CLI menu**: Easy-to-use navigation for file operations.
-✅ **Sync & Async operations**: Implements both synchronous (`fs.readFileSync`) and asynchronous (`fs.readFile`).
+## Features
+
+- **Read Files**: View the content of any file in the current directory.
+- **Write Files**: Create or overwrite files with user-provided content.
+- **User-Friendly Menu**: Interactive menu for easy navigation.
+- **Error Handling**: Handles invalid inputs and non-existent files gracefully.
 
 ---
 
-## 🛠 Installation & Usage
+## Prerequisites
 
-### 1️⃣ Clone the Repository
-```sh
-git clone https://github.com/yousefkhalaf0/node-file-manager.git
-cd node-file-manager
+Before running the program, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js)
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/file-manager-cli.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd file-manager-cli
+   ```
+3. Install the required dependency (`readline-sync`):
+   ```bash
+   npm install
+   ```
+
+---
+
+## Usage
+
+1. Run the program:
+   ```bash
+   node main.js
+   ```
+2. Follow the on-screen menu:
+   - **Option 1**: Read a file.
+     - Enter the name of the file you want to read.
+     - The program will display the file's content if it exists.
+   - **Option 2**: Write to a file.
+     - Enter the name of the file you want to write to.
+     - If the file already exists, it will be overwritten.
+     - Enter the content you want to write to the file.
+     - The program will save the file and display its content.
+   - **Option 3**: Exit the program.
+
+---
+
+## Example Workflow
+
+### Reading a File
+```
+📜 MENU
+[1] Read a file
+[2] Write a file
+[3] Exit
+Pick an option: 1
+Enter the file name to read: example.txt
+
+📖 File Content:
+Hello, World!
 ```
 
-### 2️⃣ Install Dependencies
-```sh
-npm install readline-sync
+### Writing to a File
+```
+📜 MENU
+[1] Read a file
+[2] Write a file
+[3] Exit
+Pick an option: 2
+Enter the file name to write: example.txt
+Enter content for the file: This is a new file.
+
+💾 File saved successfully!
+
+📖 File Content:
+This is a new file.
 ```
 
-### 3️⃣ Run the Program
-```sh
-node main.js
+### Exiting the Program
+```
+📜 MENU
+[1] Read a file
+[2] Write a file
+[3] Exit
+Pick an option: 3
+
+👋 Exiting... Goodbye!
 ```
 
 ---
 
-## 📂 Project Structure
-```bash
-📦 node-file-manager
-├── 📄 fileReader.js    # Standalone script for reading files
-├── 📄 fileManager.js   # Interactive file management system
-├── 📄 main.js          # Entry point for running the CLI tool
-├── 📄 README.md        # Documentation file
-└── 📄 package.json     # Dependencies and project metadata
-```
+## Code Structure
+
+- **`index.js`**: Contains the main logic for reading, writing, and managing files.
+- **`main.js`**: Imports and runs the `main` function from `index.js`.
 
 ---
 
-## 📝 How It Works
-### **1️⃣ fileReader.js**
-- Prompts the user for a filename.
-- Reads the file **asynchronously** using `fs.readFile`.
-- Reads the file **synchronously** using `fs.readFileSync`.
-- Displays file content or an error message if the file doesn't exist.
+## Dependencies
 
-### **2️⃣ fileManager.js**
-- Provides a **menu-driven interface** for file operations.
-- Uses `readline-sync` for handling user input synchronously.
-- Supports:
-  - **Reading a file**
-  - **Writing a file** (overwrites if the file already exists)
-  - **Graceful exit**
-
-### **3️⃣ main.js**
-- Imports `fileManager.js` and starts the interactive CLI tool.
+- [readline-sync](https://www.npmjs.com/package/readline-sync): A synchronous library for reading user input from the command line.
 
 ---
 
-## 🎯 Future Enhancements
-🚀 **Add file deletion option**
-🚀 **Improve UI using colors (`chalk` package)**
-🚀 **Implement file streaming for large files**
+## Contributing
+
+Contributions are welcome! If you'd like to improve this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes.
+4. Push your branch and submit a pull request.
 
 ---
 
-## 📌 Author
-**Yousef Khalaf**  
-GitHub: [yousefkhalaf0](https://github.com/yousefkhalaf0)
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📜 License
-This project is **open-source** and available under the [MIT License](LICENSE).
+## Acknowledgments
+
+- Built with Node.js and `readline-sync`.
+- Inspired by simple file management utilities.
