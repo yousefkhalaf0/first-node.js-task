@@ -39,15 +39,20 @@ function main() {
 
         const choice = readline.question("Pick an option: ");
 
-        if (choice === "1") {
-            readFile();
-        } else if (choice === "2") {
-            writeFile();
-        } else if (choice === "3") {
-            console.log("\n👋 Exiting... Goodbye!");
-            process.exit(0);
-        } else {
-            console.log("\n❌ Invalid option! Try again.");
+        switch (choice) {
+            case "1":
+                readFile();
+                break;
+            case "2":
+                writeFile();
+                break;
+            case "3":
+                console.log("\n👋 Exiting... Goodbye!");
+                process.exit(0);
+                break;
+            default:
+                console.log("\n❌ Invalid option! Try again.");
+                break;
         }
     }
 }
